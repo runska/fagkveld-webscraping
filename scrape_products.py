@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 session = requests.session()
 session.headers.update({"User-Agent": UserAgent().chrome})
 
-codes = pd.read_csv("codes.csv")
+codes = pd.read_csv("data/codes.csv")
 
 
 def scrape_single_product(code):
@@ -39,5 +39,5 @@ def scrape_products_mulithreaded():
 scraped_product_data = scrape_products_mulithreaded()
 
 products_df = pd.DataFrame(data=scraped_product_data)
-products_df.to_csv("data.csv")
+products_df.to_csv("data/product_data.csv")
 print(products_df.describe())

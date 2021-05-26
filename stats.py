@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 pd.set_option('display.expand_frame_repr', False)
 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("data/product_data.csv")
 
 data = data[data["volume"] != "{}"]
 

@@ -35,5 +35,5 @@ def scrape_all_codes():
 product_codes = scrape_all_codes()
 
 codes_df = pd.DataFrame(product_codes, columns=["code"])
-codes_df.to_csv("codes.csv")
+codes_df.to_csv("data/codes.csv")
 print(codes_df.describe())
