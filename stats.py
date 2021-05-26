@@ -26,9 +26,8 @@ ml_alcohol_per_krone = (alcohol / 100) / price_per_liter * 1000
 
 data["ml_alcohol_per_krone"] = ml_alcohol_per_krone
 data["link"] = data["code"].apply(lambda code: f"https://www.vinmonopolet.no/p/{code}")
-data = data[data["ml_alcohol_per_krone"] != 0]
 
-data = data.sort_values(by="ml_alcohol_per_krone", ascending=True)
+data = data.sort_values(by="ml_alcohol_per_krone", ascending=False)
 print(data[["code", "name", "ml_alcohol_per_krone", "link"]])
 
 data["category"] = get_json_property(data["main_category"], "name")
